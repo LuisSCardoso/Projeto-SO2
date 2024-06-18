@@ -49,7 +49,7 @@ const NewReservation = () => {
         
         console.log(requestData)
 
-        const request = fetch(`http://${backendIp || 'localhost'}::4000/reservation/create`, {
+        const request = fetch(`http://${localStorage.getItem('backendIp') || 'localhost'}::4000/reservation/create`, {
             method: 'POST',
             body: requestData
         })

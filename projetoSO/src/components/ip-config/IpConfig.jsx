@@ -7,7 +7,7 @@ const IpConfig = () => {
   const [ipAddress, setIpAddress] = useState('');
 
   const saveIpAddress = () => {
-    Cookies.set('backendIp', ipAddress);
+    localStorage.setItem('backendIp', ipAddress);
     window.location.href = '/';
   };
 

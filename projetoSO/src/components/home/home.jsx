@@ -13,7 +13,7 @@ const Home = () => {
     useEffect(() => {
         const fetchReservations = async () => {
           try {
-            const response = await fetch(`http://${backendIp || 'localhost'}:4000/reservation/fetch`	); // Ajuste a URL conforme necessário
+            const response = await fetch(`http://${localStorage.getItem('backendIp') || 'localhost'}:4000/reservation/fetch`	); // Ajuste a URL conforme necessário
             if (response.ok) {
               const data = await response.json();
               setReservations(data);

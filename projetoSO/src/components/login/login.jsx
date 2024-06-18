@@ -29,7 +29,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const request = fetch(`http://${backendIp || 'localhost'}:4000/user/login`, {
+        const request = fetch(`http://${localStorage.getItem('backendIp') || 'localhost'}:4000/user/login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
