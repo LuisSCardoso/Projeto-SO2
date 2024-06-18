@@ -15,6 +15,7 @@ const NewReservation = () => {
         info: '',
         guests: ''
     });
+    const [backendIp, setBackendIp] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -48,7 +49,7 @@ const NewReservation = () => {
         
         console.log(requestData)
 
-        const request = fetch('http://54.227.31.222:4000/reservation/create', {
+        const request = fetch(`http://${backendIp || 'localhost'}::4000/reservation/create`, {
             method: 'POST',
             body: requestData
         })

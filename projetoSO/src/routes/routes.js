@@ -4,6 +4,8 @@ import Register from "../components/register/register";
 import Home from "../components/home/home";
 import NewReservation from "../components/newReservation/newReservation";
 import ProtectedRoute from "./protectedRoute";
+import IpConfig from "../components/ip-config/IpConfig";
+
 
 export const Routes = () => {
     const routes = [
@@ -14,6 +16,10 @@ export const Routes = () => {
       {
         path: '/register',
         element: <Register />
+      },
+      {
+        path: '/ipConfig',
+        element: <IpConfig />
       }
     ];
   

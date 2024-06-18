@@ -5,6 +5,7 @@ const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [backendIp, setBackendIp] = useState('');
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -24,7 +25,7 @@ const Register = () => {
             alert("Passwords do not match");
             return;
         }
-        const request = fetch('http://54.227.31.222:4000/user/create', {
+        const request = fetch(`http://${backendIp || 'localhost'}::4000/user/create`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

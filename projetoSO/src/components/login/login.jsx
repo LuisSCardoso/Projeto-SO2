@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import Cookies from 'js-cookie';
+
 
 const Login = () => {
+
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [backendIp, setBackendIp] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const ip = Cookies.get('backendIp') || '';
+        setBackendIp(ip);
+      }, []);
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -18,7 +29,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const request = fetch('http://54.227.31.222:4000/user/login', {
+        const request = fetch(`http://${backendIp || 'localhost'}:4000/user/login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -63,6 +74,7 @@ const Login = () => {
                     />
                 </div>
                 <button type="submit">Login</button>
+            <Link to="/ipConfig">Configurar IP do Back-end</Link>
             </form>
         </div>
     );
