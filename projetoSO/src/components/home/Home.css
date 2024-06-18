@@ -1,0 +1,12 @@
+.home {
+    display: flex;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
