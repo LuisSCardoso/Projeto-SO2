@@ -25,7 +25,7 @@ const Register = () => {
             alert("Passwords do not match");
             return;
         }
-        const request = fetch(`http://${localStorage.getItem('backendIp') || 'localhost'}::4000/user/create`, {
+        const request = fetch(`http://${localStorage.getItem('backendIp') || 'localhost'}:4000/user/create`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
