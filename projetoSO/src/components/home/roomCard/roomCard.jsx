@@ -4,7 +4,7 @@ import './RoomCard.css';
 const RoomCard = ({ room }) => {
     return (
         <div className="room-card">
-            <img src={room.photo} alt={`Foto da ${room.name}`} className="room-photo" />
+            <img src={room.photo_url} alt={`Foto da ${room.name}`} className="room-photo" />
             <div className="room-details">
                 <h2 className="room-name">{room.name}</h2>
                 <p><strong>Local:</strong> {room.location}</p>

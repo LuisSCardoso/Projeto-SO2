@@ -50,7 +50,7 @@ const NewReservation = () => {
 
         const request = fetch('http://localhost:4000/reservation/create', {
             method: 'POST',
-            body: formData
+            body: requestData
         })
     
         const response = await request
