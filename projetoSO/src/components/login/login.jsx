@@ -18,7 +18,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const request = fetch('http://localhost:4000/user/login', {
+        const request = fetch('http://54.227.31.222:4000/user/login', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

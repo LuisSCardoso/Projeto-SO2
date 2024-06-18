@@ -24,7 +24,7 @@ const Register = () => {
             alert("Passwords do not match");
             return;
         }
-        const request = fetch('http://localhost:4000/user/create', {
+        const request = fetch('http://54.227.31.222:4000/user/create', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
